@@ -1,4 +1,15 @@
-#!/usr/bin/env bash
+#!/bin/bash
+#  ____ _____
+# |  _ \_   _|  Derek Taylor (DistroTube)
+# | | | || |  	http://www.youtube.com/c/DistroTube
+# | |_| || |  	http://www.gitlab.com/dwt1/ 
+# |____/ |_|  	
+#        
+# A customized sxhkdrc for the bspwm window manager.
+# https://github.com/baskerville/sxhkd
+# https://github.com/baskerville/bspwm
+
+### WM INDEPENDENT KEYBINDINGS ###
 
 # make sxhkd reload its configuration files:
 super + Escape
@@ -12,7 +23,7 @@ super + Return
 
 # run program launcher
 super + r
-	rofi -show drun
+	rofi -show drun 
 
 # quit/restart bspwm
 super + shift + q
@@ -25,10 +36,6 @@ super + shift + r
 # close and kill
 super + shift + c
 	bspc node -c
-
-# terminal emulator
-super + slash
-	dtos-help
 
 # alternate between the tiled and monocle layout
 super + space
@@ -124,63 +131,9 @@ ctrl + alt + l
 super + {Left,Down,Up,Right}
 	bspc node -v {-20 0,0 20,0 -20,20 0}
 
-# launch qutebrowser
 super + q
-	firefox
+	vivaldi
 
-# dmscripts (SUPER + p followed by another key)
-super + p; h
-    dm-hub
-super + p; {a}
-    dm-sounds
-super + p; {b}
-    dm-setbg
-super + p; {c}
-    dtos-colorscheme
-super + p; {shift + c}
-    dm-colpick
-super + p; {e}
-    dm-confedit
-super + p; {i}
-    dm-maim
-super + p; {k}
-    dm-kill
-super + p; {m}
-    dm-man
-super + p; {n}
-    dm-note
-super + p; {o}
-    dm-bookman
-super + p; p
-    passmenu -p Pass:
-super + p; {q}
-    dm-logout
-super + p; {r}
-    dm-radio
-super + p; {s}
-    dm-websearch
-super + p; {t}
-    dm-translate
-
-# emacs (SUPER + e followed by another key)
-super + e; e
-    emacsclient -c -a 'emacs'
-super + e; a
-    emacsclient -c -a 'emacs' --eval '(emms)' --eval '(emms-play-directory-tree \"~/Music/\")'
-super + e; b
-    emacsclient -c -a 'emacs' --eval '(ibuffer)'
-super + e; d
-    emacsclient -c -a 'emacs' --eval '(dired nil)'
-super + e; i
-    emacsclient -c -a 'emacs' --eval '(erc)'
-super + e; n
-    emacsclient -c -a 'emacs' --eval '(elfeed)'
-super + e; s
-    emacsclient -c -a 'emacs' --eval '(eshell)'
-super + e; v
-    emacsclient -c -a 'emacs' --eval '(+vterm/here nil)'
-super + e; w
-    emacsclient -c -a 'emacs' --eval '(doom/window-maximize-buffer(eww "distro.tube"))'
 XF86AudioPlay
     /home/joel/.config/sxhkd/play-pause.sh
 XF86AudioNext
